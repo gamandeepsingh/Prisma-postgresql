@@ -12,11 +12,10 @@ CREATE TABLE "User" (
 
 -- CreateTable
 CREATE TABLE "Post" (
-    "id" TEXT NOT NULL,
+    "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
-    "content" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "content" TEXT,
+    "published" BOOLEAN NOT NULL DEFAULT false,
     "authorId" INTEGER NOT NULL,
 
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
